@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="remove : delete file">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/Hint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enums/GameStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/FileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/domain/File.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/domain/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723622666049</updated>
       <workItem from="1723622667193" duration="2000" />
-      <workItem from="1723648874742" duration="2920000" />
+      <workItem from="1723648874742" duration="3815000" />
     </task>
     <task id="LOCAL-00001" summary="remove : delete file">
       <option name="closed" value="true" />
