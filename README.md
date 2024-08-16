@@ -1,4 +1,5 @@
-# JAVA mini project - 명탐정성민
+# JAVA mini project
+<br/>
 
 <table>
   <tr>
@@ -10,7 +11,7 @@
     <td>JAVA</td>
   </tr>
 </table>
-
+<br/>
 ## 💡 스터디 멤버
 <table>
  <tr>
@@ -24,7 +25,6 @@
 </table>
 
 <br/>
-
 
 ## ⚠️ 권장  commit 컨벤션
 
