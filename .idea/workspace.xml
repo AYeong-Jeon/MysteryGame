@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="docks : update file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/ImageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/repository/GameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aggregate/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aggregate/Hint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/Hint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/run/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/run/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,18 +33,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AYeong-Jeon"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AYeong-Jeon&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sung-mini/MysteryGame.git",
-    "accountId": "3ed56d36-76c4-44b0-b572-3ff0d9b9210c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sung-mini/MysteryGame.git&quot;,
+    &quot;accountId&quot;: &quot;3ed56d36-76c4-44b0-b572-3ff0d9b9210c&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -61,7 +63,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/USER/IdeaProjects/MyProgrammersCodingTest",
+    "last_opened_file_path": "C:/Users/Playdata/IdeaProjects/beyond-sw10-class/chap99-comprehensive-lecture-source",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,7 +115,7 @@
       <updated>1723622666049</updated>
       <workItem from="1723622667193" duration="2000" />
       <workItem from="1723648874742" duration="6526000" />
-      <workItem from="1723770133621" duration="7709000" />
+      <workItem from="1723770133621" duration="9531000" />
     </task>
     <task id="LOCAL-00001" summary="remove : delete file">
       <option name="closed" value="true" />
@@ -131,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723784962461</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="docks : update file">
+      <option name="closed" value="true" />
+      <created>1723797628970</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723797628970</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
