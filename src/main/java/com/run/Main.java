@@ -1,8 +1,15 @@
 package com.run;
 
-import com.util.ImageUtil;
+import com.service.GameService;
+
+import java.util.Scanner;
 
 public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
+    
+    static GameService gameService;
+
     public static void main(String[] args) {
         System.out.println("================================================================================================================================================================");
         System.out.println(" _______   _______ .___________. _______   ______ .___________. __  ____    ____  _______      _______. __    __  .__   __.   _______ .___  ___.  __  .__   __. \n" +
@@ -14,43 +21,38 @@ public class Main {
                 "                                                                                                                                                                ");
         System.out.println("=================================================================================================================================================================");
 
-        System.out.println("1. 게임하기");
-        System.out.println("2. 최근 게임 기록");
-        System.out.println("3. 회원 가입");
-        System.out.println("4. 회원 정보 수정");
-        System.out.println("5. 회원 탈퇴");
-        System.out.println("6. 도움말");
-        System.out.println("7. 설정");
-        System.out.println("9. 게임 종료");
-        System.out.print("메뉴 선택 : ");
+        System.out.println("1. 로그인");
+        System.out.println("2. 회원가입");
+        String c = scanner.nextLine();
 
-
-        ImageUtil message = new ImageUtil();
-        System.out.println(message.getBossImg());
-
-        int count = 0;
-        while (count<10) {
-            System.out.println(message.horrorImg1());
-            System.out.println(message.horrorImg2());
-            count++;
+        if("1".equals(c)) {
+            login();
+        } else {
+            createUser();
         }
-
-        String textToBlink = message.horrorImg1();
-        String textToBlink2 = message.horrorImg2();
-        int interval = 50; // 깜빡임 간격 (밀리초 단위)
-        int repetitions = 100; // 깜빡임 반복 횟수
-
-        try {
-            for (int i = 0; i < repetitions; i++) {
-                System.out.print("\r" + textToBlink); // 텍스트 출력 및 커서를 행의 시작으로 이동
-                Thread.sleep(interval); // 대기
-                System.out.print("\r" + textToBlink2);
-                Thread.sleep(interval); // 대기
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        
+        //로그인한 유저만 게임 페이지 진입 가능
+        if(/*아이디가 있을 경우*/) {
+            startGame();
         }
 
 
     }
+
+    public static void login() {
+
+    }
+
+    public static void createUser() {
+
+    }
+
+    public void startGame() {
+        gameService.startGame();
+    }
+
+    public void stopGame() {
+
+    }
+
 }
