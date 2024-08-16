@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="remove : delete file">
+    <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="docks : update file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/ImageUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Hint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/Hint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enums/GameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/GameStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/run/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/run/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/run/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +68,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/USER/IdeaProjects/hello/DetectiveSungmin/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
@@ -113,7 +113,7 @@
       <updated>1723622666049</updated>
       <workItem from="1723622667193" duration="2000" />
       <workItem from="1723648874742" duration="6526000" />
-      <workItem from="1723770133621" duration="3970000" />
+      <workItem from="1723770133621" duration="7709000" />
     </task>
     <task id="LOCAL-00001" summary="remove : delete file">
       <option name="closed" value="true" />
@@ -123,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723649223000</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="docks : update file">
+      <option name="closed" value="true" />
+      <created>1723784962461</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723784962461</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +150,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove : delete file" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove : delete file" />
+    <MESSAGE value="docks : update file" />
+    <option name="LAST_COMMIT_MESSAGE" value="docks : update file" />
   </component>
 </project>
