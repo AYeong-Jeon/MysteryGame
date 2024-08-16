@@ -1,4 +1,4 @@
-package com.domain;
+package com.aggregate;
 
 import java.io.Serializable;
 

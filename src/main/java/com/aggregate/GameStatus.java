@@ -1,4 +1,4 @@
-package com.enums;
+package com.aggregate;
 
 public enum GameStatus {
     WAIT("대기중"),

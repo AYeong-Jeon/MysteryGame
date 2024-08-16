@@ -1,7 +1,6 @@
-package com.domain;
+package com.aggregate;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 public class User implements Serializable {
     private String name;

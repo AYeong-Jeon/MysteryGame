@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="remove : delete file">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/view/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/File.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/Hint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/Hint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enums/GameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/GameStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/run/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +77,11 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.view.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.run.Main" />
       <module name="DetectiveSungmin.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.view.*" />
+          <option name="PATTERN" value="com.run.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,7 +113,7 @@
       <updated>1723622666049</updated>
       <workItem from="1723622667193" duration="2000" />
       <workItem from="1723648874742" duration="6526000" />
-      <workItem from="1723770133621" duration="170000" />
+      <workItem from="1723770133621" duration="3970000" />
     </task>
     <task id="LOCAL-00001" summary="remove : delete file">
       <option name="closed" value="true" />
