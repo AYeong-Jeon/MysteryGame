@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="feat : update file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/FIleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/GameService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/run/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/run/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="feat : update main.java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +108,7 @@
       <updated>1723622666049</updated>
       <workItem from="1723622667193" duration="2000" />
       <workItem from="1723648874742" duration="6526000" />
-      <workItem from="1723770133621" duration="10344000" />
+      <workItem from="1723770133621" duration="10426000" />
     </task>
     <task id="LOCAL-00001" summary="remove : delete file">
       <option name="closed" value="true" />
@@ -148,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723799418425</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat : update main.java">
+      <option name="closed" value="true" />
+      <created>1723800098561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723800098561</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +171,7 @@
     <MESSAGE value="remove : delete file" />
     <MESSAGE value="docks : update file" />
     <MESSAGE value="feat : update file" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : update file" />
+    <MESSAGE value="feat : update main.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : update main.java" />
   </component>
 </project>
