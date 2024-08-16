@@ -36,7 +36,6 @@ public class Main {
             startGame();
         }
 
-
     }
 
     public static void login() {
