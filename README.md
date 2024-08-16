@@ -40,21 +40,14 @@
 - `comment` : 주석 추가 및 변경
 - `remove` : 파일, 폴더 삭제	ex) Fixes: #45 Related to: #34, #23
 - `rename` : 파일, 폴더명 수정
-- 
 <br/>
 
 ```
 Feat: "회원 가입 기능 구현"
 
-SMS, 이메일 중복확인 API 개발
-
-Resolves: #123
-Ref: #456
-Related to: #48, #45
 ```
 
 <br/>
-
 
 
 
