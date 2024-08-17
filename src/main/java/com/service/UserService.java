@@ -13,9 +13,9 @@ public class UserService {
     static String loggedInUser = null;
 
     public String login() {
-        System.out.print("아이디를 입력하세요: ");
+        System.out.print("아이디를 입력하세요 : ");
         String userId = scanner.nextLine();
-        System.out.print("비밀번호를 입력하세요: ");
+        System.out.print("비밀번호를 입력하세요 : ");
         String password = scanner.nextLine();
 
         Map<String, User> users = userRepository.loadUsers();
@@ -33,11 +33,11 @@ public class UserService {
     }
 
     public void createUser() {
-        System.out.print("이름을 입력하세요: ");
+        System.out.print("이름을 입력하세요 : ");
         String name = scanner.nextLine();
-        System.out.print(" 아이디를 입력하세요: ");
+        System.out.print(" 아이디를 입력하세요 : ");
         String newUserId = scanner.nextLine();
-        System.out.print(" 비밀번호를 입력하세요: ");
+        System.out.print(" 비밀번호를 입력하세요 : ");
         String newPassword = scanner.nextLine();
 
         Map<String, User> users = userRepository.loadUsers();
@@ -52,4 +52,5 @@ public class UserService {
             loggedInUser = newUserId;
         }
     }
+
 }

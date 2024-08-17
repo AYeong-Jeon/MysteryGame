@@ -47,15 +47,36 @@ public class Main {
     }
 
     public static String login() {
-        return userService.login();
+        try {
+            return userService.login();
+        } catch (Exception e) {
+            if("saveUserErr".equals(e.getMessage())) {
+                System.out.println("회원 정보를 저장하는 중 오류가 발생했습니다.");
+            } else {
+                e.printStackTrace();
+            }
+            return "";
+        }
     }
 
     public static void createUser() {
-        userService.createUser();
+        try {
+            userService.createUser();
+        } catch (Exception e) {
+            if("loadUserErr".equals(e.getMessage())) {
+                System.out.println("회원정보를 불러오는 중 오류가 발생했습니다.");
+            } else {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static void startGame() {
-        gameService.startGame();
+        try {
+            gameService.startGame();
+        } catch (Exception e) {
+
+        }
     }
 
     public static void stopGame() {
