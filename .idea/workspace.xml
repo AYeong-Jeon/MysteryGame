@@ -180,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723801042377</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat : update code">
+      <option name="closed" value="true" />
+      <created>1723801965553</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723801965553</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +210,7 @@
     <MESSAGE value="docks : update file" />
     <MESSAGE value="feat : update file" />
     <MESSAGE value="feat : update main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : update main.java" />
+    <MESSAGE value="feat : update code" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : update code" />
   </component>
 </project>
