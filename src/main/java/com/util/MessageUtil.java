@@ -12,11 +12,20 @@ public class MessageUtil {
     }
 
     public void getLoginErrorMsg() {
-
+        System.out.println("회원 정보를 저장하는 중 오류가 발생했습니다.");
     }
 
     public void getButtonErrorMsg () {
         System.out.println("잘못 누르셨습니다. 번호를 다시 입력해주세요.");
+    }
+
+    public void getWarningMsg() {
+        System.out.println("");
+        System.out.println("\uD83D WARNING \uDFE5");
+        System.out.println("본 게임은 폐병동에 관한 내용을 포함하고 있습니다.");
+        System.out.println("심장이 약하신 분이나 노약자, 어린이, 강사님은" +
+                "성민이와 함께 플레이 해주시기 바랍니다.");
+        System.out.println("");
     }
 
 }

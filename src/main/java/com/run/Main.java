@@ -3,6 +3,7 @@ package com.run;
 import com.aggregate.User;
 import com.service.GameService;
 import com.service.UserService;
+import com.util.MessageUtil;
 
 import java.io.*;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ public class Main {
     static GameService gameService = new GameService();
 
     static UserService userService = new UserService();
+    static MessageUtil messageUtil = new MessageUtil();
 
 
     public static void main(String[] args) {
@@ -51,7 +53,7 @@ public class Main {
             return userService.login();
         } catch (Exception e) {
             if("saveUserErr".equals(e.getMessage())) {
-                System.out.println("회원 정보를 저장하는 중 오류가 발생했습니다.");
+                messageUtil.getLoginErrorMsg();
             } else {
                 e.printStackTrace();
             }
