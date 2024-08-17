@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class UserRepository {
 
-    //private static final String USER_FILE = "/Users/jeon-ayeong/Desktop/test.txt";
+    private static final String USER_FILE = "/Users/jeon-ayeong/Desktop/test.txt";
     //private static final String USER_FILE = "C:/Users/USER/Desktop/Users.txt";
 
     public Map<String, User> loadUsers() {

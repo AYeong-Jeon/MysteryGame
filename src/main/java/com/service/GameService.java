@@ -86,7 +86,18 @@ public class GameService {
         System.out.println("1. 추리 모드");
         System.out.println("2. 공포 모드");
         System.out.print("모드를 선택하세요 : ");
+
+        while (!scanner.hasNextInt()) {
+            scanner.next();
+            messageUtil.getButtonErrorMsg();
+        }
+
         int mode = scanner.nextInt();
+        while(mode!=1 || mode!=2) {
+            messageUtil.getButtonErrorMsg();
+            mode = scanner.nextInt();
+        }
+
         if (mode == 1) {
             System.out.println("추리 모드로 변경");
         } else if (mode == 2) {
@@ -134,6 +145,7 @@ public class GameService {
                 "하지만 최근, 이곳에서 이상한 불빛이 목격되고, 밤마다 마을로부터 들리지 않던 끔찍한 비명 소리가 들려왔다. " + "\n" +
                 "사람들은 이곳을 두려워하며 절대 접근하지 않았지만, 당신은 이 비밀을 밝혀내기 위해 병원에 들어가기로 한다.");
         System.out.println("\n\n");
+
     }
 
 }
