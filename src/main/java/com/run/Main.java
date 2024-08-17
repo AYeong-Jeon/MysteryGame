@@ -76,7 +76,11 @@ public class Main {
         try {
             gameService.startGame();
         } catch (Exception e) {
-
+            if("buttonErr".equals(e.getMessage())) {
+                messageUtil.getButtonErrorMsg();
+            } else {
+                e.printStackTrace();
+            }
         }
     }
 

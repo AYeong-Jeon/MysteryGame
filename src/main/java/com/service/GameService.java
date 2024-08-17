@@ -97,8 +97,7 @@ public class GameService {
                         break;
                 }
             } catch (InputMismatchException e) {
-                messageUtil.getButtonErrorMsg();
-                scanner.nextLine();
+                throw new RuntimeException("buttonErr");
             }
 
             System.out.println();
@@ -129,7 +128,7 @@ public class GameService {
                 Thread.sleep(interval); // 대기
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+
         }
     }
 
