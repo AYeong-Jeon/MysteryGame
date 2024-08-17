@@ -1,9 +1,16 @@
 package com.service;
 
+import com.aggregate.User;
 import com.util.ImageUtil;
 import com.util.MessageUtil;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 
 public class GameService {
@@ -131,4 +138,5 @@ public class GameService {
         GameService gameService = new GameService();
         gameService.startGame();
     }
+
 }
