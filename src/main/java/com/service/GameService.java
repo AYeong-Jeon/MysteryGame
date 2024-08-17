@@ -105,7 +105,6 @@ public class GameService {
         }
     }
 
-
     public void gameFailImgView() {
         ImageUtil message = new ImageUtil();
         System.out.println(message.getBossImg());

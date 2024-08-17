@@ -14,7 +14,6 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     static GameService gameService = new GameService();
-
     static UserService userService = new UserService();
     static MessageUtil messageUtil = new MessageUtil();
 
@@ -53,7 +52,7 @@ public class Main {
             return userService.login();
         } catch (Exception e) {
             if("saveUserErr".equals(e.getMessage())) {
-                messageUtil.getLoginErrorMsg();
+                messageUtil.getLoadUserErrorMsg();
             } else {
                 e.printStackTrace();
             }
@@ -66,7 +65,7 @@ public class Main {
             userService.createUser();
         } catch (Exception e) {
             if("loadUserErr".equals(e.getMessage())) {
-                System.out.println("회원정보를 불러오는 중 오류가 발생했습니다.");
+                messageUtil.getLoadUserErrorMsg();
             } else {
                 e.printStackTrace();
             }
