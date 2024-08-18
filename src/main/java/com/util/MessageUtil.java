@@ -26,7 +26,7 @@ public class MessageUtil {
     }
 
     public void getButtonErrorMsg () {
-        System.out.println("잘못 누르셨습니다. 번호를 다시 입력해주세요.");
+        System.out.println("잘못 누르셨습니다. 다시 입력해주세요.");
     }
 
 }

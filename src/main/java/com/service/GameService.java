@@ -168,7 +168,6 @@ public class GameService {
             System.out.println("틀렸습니다.");
             return false;
         }
-        System.out.println();
     }
 
     private String getMysteryQuestion(int questionNumber) {
@@ -241,10 +240,11 @@ public class GameService {
                 messageUtil.getButtonErrorMsg();
             }
         }
-        timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameFirstMsg(), 20);
+        scanner.nextLine();
+        timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameFirstMsg(), 40);
         System.out.println(imageUtil.horrorGameFirstImg());
-
         System.out.println(messageUtil.getGameEndMsg());
+
         while (true) {
             while (!scanner.hasNextLine()) {
                 scanner.next();
@@ -254,9 +254,81 @@ public class GameService {
             String c = scanner.nextLine();
             if ("병동".equals(c)) {
                 System.out.println("\n정답입니다. 병동으로 이동합니다.\n\n");
+                horrorGameLevel2();
                 break;
-            } else if ("h".equals(c)) {
-                System.out.println("1. 정답은 두 글자 입니다.");
+            } else if ("힌트".equals(c)) {
+                getHint(1);
+            } else if ("정답".equals(c)) {
+                getAnswer(1);
+            } else {
+                messageUtil.getButtonErrorMsg();
+            }
+        }
+    }
+
+    public void horrorGameLevel2() {
+        timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameSecondMsg(), 50);
+        System.out.println(imageUtil.horrorGameSecondImg());
+        System.out.println(messageUtil.getGameEndMsg());
+
+        while (true) {
+            while (!scanner.hasNextLine()) {
+                scanner.next();
+                messageUtil.getButtonErrorMsg();
+            }
+
+            String c = scanner.nextLine();
+            if ("원장".equals(c)) {
+                System.out.println("\n정답입니다. 원장의 비밀 실험실로 이동합니다.\n\n");
+                horrorGameLevel3();
+                break;
+            } else if ("힌트".equals(c)) {
+                getHint(2);
+            } else if ("정답".equals(c)) {
+                getAnswer(2);
+            } else {
+                messageUtil.getButtonErrorMsg();
+            }
+        }
+    }
+
+    public void horrorGameLevel3() {
+        timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameThirdMsg(), 50);
+        System.out.println(imageUtil.horrorGameThirdImg());
+        System.out.println(messageUtil.getGameEndMsg());
+
+        while (true) {
+            while (!scanner.hasNextLine()) {
+                scanner.next();
+                messageUtil.getButtonErrorMsg();
+            }
+
+            String c = scanner.nextLine();
+            if ("26734".equals(c)) {
+                System.out.println("\n정답입니다. 출구로 이동합니다.\n\n");
+                horrorGameSuccess();
+                break;
+            } else if ("힌트".equals(c)) {
+                getHint(3);
+            } else if ("정답".equals(c)) {
+                getAnswer(3);
+            } else {
+                messageUtil.getButtonErrorMsg();
+            }
+        }
+    }
+
+    public void horrorGameSuccess () {
+        horrorMessageUtil.gameFailImgView();
+        timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameFinalMsg(), 20);
+        System.out.println("\n\n");
+    }
+
+    public void getHint(int levelNum) {
+        System.out.println("\n");
+        switch (levelNum) {
+            case 1 :
+                System.out.println("1. 정답은 두글자 입니다.");
                 System.out.println("2. 나침반 왼쪽에 다른 문자가 있습니다.\n" +
                         " _             _    _    _       \n" +
                         "| |           | |  | |  | |      \n" +
@@ -264,16 +336,33 @@ public class GameService {
                         "| '_ \\  / _ \\ | __|| __|| | / _ \\\n" +
                         "| |_) || (_) || |_ | |_ | ||  __/\n" +
                         "|_.__/  \\___/  \\__| \\__||_| \\___|" + "\n");
-                System.out.println(messageUtil.getAnswerMsg());
-                System.out.println("정답 : ");
-            } else if ("정답".equals(c)) {
-                System.out.println("\n 정답은 [병동] 입니다. \n");
-                System.out.println("정답 : ");
-            } else {
-                messageUtil.getButtonErrorMsg();
-            }
+                break;
+            case 2 :
+                System.out.println("1. 정답은 두글자 입니다.");
+                System.out.println("2. one");
+                break;
+            case 3 :
+                System.out.println("1. 일기 내용 중 특수 문자가 포함되어 있습니다.");
+                System.out.println("2. 정답은 5개의 숫자 입니다.");
+                break;
         }
+        System.out.println(messageUtil.getAnswerMsg());
+        System.out.println("정답 : ");
+    }
 
+    public void getAnswer(int levelNum) {
+        switch (levelNum) {
+            case 1 :
+                System.out.println("\n 정답은 [병동] 입니다. \n");
+                break;
+            case 2:
+                System.out.println("\n 정답은 [원장] 입니다. \n");
+                break;
+            case 3:
+                System.out.println("\n 정답은 [26734] 입니다. \n");
+                break;
+        }
+        System.out.println("정답 : ");
     }
 
 }

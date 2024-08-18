@@ -19,7 +19,7 @@ public class HorrorMessageUtil {
         String textToBlink = message.horrorImg1();
         String textToBlink2 = message.horrorImg2();
         int interval = 50; // 깜빡임 간격 (밀리초 단위)
-        int repetitions = 100; // 깜빡임 반복 횟수
+        int repetitions = 30; // 깜빡임 반복 횟수
 
         try {
             for (int i = 0; i < repetitions; i++) {
@@ -29,8 +29,9 @@ public class HorrorMessageUtil {
                 Thread.sleep(interval); // 대기
             }
         } catch (InterruptedException e) {
-
+            e.printStackTrace();
         }
+        System.out.println("\n\n");
     }
 
     public void getWarningMsg() {
@@ -71,5 +72,28 @@ public class HorrorMessageUtil {
                 "벽에는 말라붙은 피로 그린 이상한 기호와 글씨가 적혀 있다."+ "\n";
     }
 
+    public String getHorrorGameSecondMsg() {
+        return "\n\n수술실을 빠져나와 병동으로 들어서면, 이곳은 병원에서 가장 많은 사람들이 사라진 곳이다." + "\n" +
+                "병원 내부는 침묵에 잠겨 있지만, 공기는 무겁고 끈적한 불안감이 감돈다. " + "\n" +
+                "병실 문들은 일부 열려 있고, 안에는 오래된 침대와 벽에 걸린 사진들이 보인다. 사진 속 인물들의 얼굴은 모자이크처럼 흐려져 있다. " + "\n" +
+                "갑자기 복도 끝에서 문이 닫히는 소리와 함께 아이의 웃음소리가 들려온다. 문을 열기 위해서는 복도 끝에 있는 방으로 가야 한다." + "\n\n\n\n"+
+                "끼 익 . . . \n\n"
+                ;
+    }
+
+    public String getHorrorGameThirdMsg() {
+        return "\n\n이 방은 병원의 심장부, 가장 깊은 곳에 위치한 원장의 비밀 실험실이다." + "\n" +
+                "방 안에는 원장의 일기와 금고가 남아 있다. 일기에는 정신을 조작하고 죽음을 초월하는 실험이 기록되어 있다." + "\n" +
+                "그리고 원장은 병원에서 벌어진 끔찍한 일들을 기록해 두었으며, 금고에 모든 운영 기록을 봉인해 두었다고 적혀있다." + "\n" +
+                "벽에는 실험 중 사망한 환자들의 사진이 걸려 있고, 그들의 얼굴은 고통으로 일그러져 있다." + "\n"
+                ;
+    }
+
+    public String getHorrorGameFinalMsg() {
+        return "출구를 찾아 병원을 탈출하던 순간, 원장의 그림자는 점점 가까워지고, 출구가 눈앞에 있을 때쯤, 병원 전체가 갑자기 흔들리며 무너지기 시작한다."  + "\n" +
+                " 여러분은 간신히 병원 밖으로 나올 수 있었지만, 뒤돌아본 병원은 흔적도 없이 사라져 있었다. "  + "\n" +
+                "그리고 마지막으로, 여러분의 손에 남아 있는 것은 원장의 방에서 발견한 낡은 열쇠뿐이다. "  + "\n\n" +
+                "이 열쇠는 정말로 병원의 출구 열쇠였을까? 아니면 또 다른 문을 열기 위한 것일까?";
+    }
 
 }
