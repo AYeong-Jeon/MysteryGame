@@ -28,6 +28,8 @@ public class MessageUtil {
         System.out.println("잘못 누르셨습니다. 번호를 다시 입력해주세요.");
     }
 
+
+
     public void getWarningMsg() {
         String text = """
                 ##   ##    ##     ######   ##   ##  ######   ##   ##    #### \s
@@ -55,5 +57,4 @@ public class MessageUtil {
                 "하지만 최근, 이곳에서 이상한 불빛이 목격되고, 밤마다 마을로부터 들리지 않던 끔찍한 비명 소리가 들려왔다. " + "\n" +
                 "사람들은 이곳을 두려워하며 절대 접근하지 않았지만, 당신은 이 비밀을 밝혀내기 위해 병원에 들어가기로 한다.\n\n";
     }
-
 }

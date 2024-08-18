@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ca5463-3eca-4e2b-9c29-f8d1cd8d8ab4" name="Changes" comment="remove : delete file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aggregate/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aggregate/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/util/GuessingMessageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/repository/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/repository/GameRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/run/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/run/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/ImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/ImageUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/util/MessageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +30,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/feature/공포게임_1" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -37,12 +42,12 @@
     &quot;assignee&quot;: &quot;AYeong-Jeon&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sung-mini/MysteryGame.git",
-    "accountId": "cd5210de-28b4-4a01-9e54-e06cee72fc18"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sung-mini/MysteryGame.git&quot;,
+    &quot;accountId&quot;: &quot;cd5210de-28b4-4a01-9e54-e06cee72fc18&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -60,7 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/추리게임__1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Playdata/IdeaProjects/beyond-sw10-class/chap99-comprehensive-lecture-source",
     "node.js.detected.package.eslint": "true",
