@@ -2,6 +2,7 @@ package com.service;
 
 import com.util.ImageUtil;
 import com.util.MessageUtil;
+import com.util.TimeUtil;
 
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class GameService {
 
     static Scanner scanner = new Scanner(System.in);
     static MessageUtil messageUtil = new MessageUtil();
-
+    static TimeUtil timeUtil = new TimeUtil();
     static boolean running = true;
 
     public void startGame() {
@@ -19,6 +20,7 @@ public class GameService {
     public void selectStartGame() {
 
         while (running) {
+            //running = false;
             System.out.println("1. 게임하기");
             System.out.println("2. 도움말");
             System.out.println("3. 게임 랭킹 조회(클리어 타임)");
@@ -40,7 +42,7 @@ public class GameService {
             switch (num) {
                 case 1:
                     System.out.println("\n\n");
-                    System.out.println("게임을 시작합니다");
+                    System.out.println("게임을 시작합니다.");
                     gameStart();
                     break;
                 case 2:
@@ -74,6 +76,7 @@ public class GameService {
                 case 6:
                     System.out.println("\n\n");
                     System.out.println("게임을 종료합니다.");
+                    //running = true;
                     break;
             }
 
@@ -83,9 +86,9 @@ public class GameService {
 
     public void gameStart() {
         System.out.println("\n\n");
-        System.out.println("1. 추리 모드");
-        System.out.println("2. 공포 모드");
-        System.out.print("모드를 선택하세요 : ");
+        System.out.println("게임을 선택하세요. : ");
+        System.out.println("1. 추리 게임");
+        System.out.println("2. 공포 게임");
 
         while (!scanner.hasNextInt()) {
             scanner.next();
@@ -93,19 +96,19 @@ public class GameService {
         }
 
         int mode = scanner.nextInt();
-        while(mode!=1 || mode!=2) {
+        while(!(mode==1 || mode==2)) {
             messageUtil.getButtonErrorMsg();
             mode = scanner.nextInt();
         }
 
         if (mode == 1) {
-            System.out.println("추리 모드로 변경");
+            System.out.println("\n\n추리 게임 START\n");
         } else if (mode == 2) {
-            System.out.println("공포 모드로 변경");
             horrorGameStart();
         } else {
-            System.out.println("잘못된 입력입니다. 설정이 변경되지 않았습니다.");
+            System.out.println("\n\n잘못된 입력입니다. 게임이 선택되지 않았습니다.\n");
         }
+        System.out.println("");
     }
 
     public void gameFailImgView() {
@@ -137,15 +140,8 @@ public class GameService {
     }
 
     private void horrorGameStart() {
-        System.out.println("\n\n\n\n");
-        System.out.println("한적한 시골 마을에 있는 오래된 병원. " + "\n" +
-                "1930년대에 지어진 이 병원은 한때 전염병 환자들을 치료하던 곳이었다. " + "\n" +
-                "그러나 병원은 곧 비극의 중심지가 되었다. 환자들은 치료를 받는 도중 비명도 지르지 못한 채 사라졌고, 의사와 간호사들은 미쳐가며 서로를 공격하기 시작했다. " + "\n" +
-                "병원에서는 실험적 치료법이 진행되었고, 그 과정에서 무언가 끔찍한 일이 벌어졌다. 급기야 병원 전체가 폐쇄되었고, 그 뒤로 아무도 이곳에 발을 들이지 않았다." + "\n" +
-                "하지만 최근, 이곳에서 이상한 불빛이 목격되고, 밤마다 마을로부터 들리지 않던 끔찍한 비명 소리가 들려왔다. " + "\n" +
-                "사람들은 이곳을 두려워하며 절대 접근하지 않았지만, 당신은 이 비밀을 밝혀내기 위해 병원에 들어가기로 한다.");
-        System.out.println("\n\n");
-
+        timeUtil.slowPrinter(messageUtil.getHorrorGameStartMsg(), 30);
+        System.out.println();
     }
 
 }

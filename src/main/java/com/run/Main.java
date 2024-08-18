@@ -76,7 +76,7 @@ public class Main {
         try {
             gameService.startGame();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 

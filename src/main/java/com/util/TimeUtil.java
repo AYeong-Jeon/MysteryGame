@@ -25,4 +25,22 @@ public class TimeUtil {
         return hoursBetween + "시간 " + minutesBetween + "분 ";
     }
 
+    public void slowPrinter(String printMessage, int printTime) {
+        for (int i = 0; i < printMessage.length(); i++) {
+            char c = printMessage.charAt(i);
+
+            if (c == '\n') {
+                System.out.println();
+            } else {
+                System.out.print(c);
+            }
+
+            try {
+                Thread.sleep(printTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
