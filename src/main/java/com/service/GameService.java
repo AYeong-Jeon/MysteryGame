@@ -27,10 +27,9 @@ public class GameService {
         while (running) {
             System.out.println("1. 게임하기");
             System.out.println("2. 도움말");
-            System.out.println("3. 게임 랭킹 조회(클리어 타임)");
-            System.out.println("4. 회원 정보 수정 (비번 수정)");
-            System.out.println("5. 회원 탈퇴");
-            System.out.println("6. 게임 종료");
+            System.out.println("3. 회원 정보 수정");
+            System.out.println("4. 회원 탈퇴");
+            System.out.println("5. 게임 종료");
             System.out.print("원하는 메뉴의 번호를 입력해주세요. : ");
 
             int num = 0;
@@ -42,7 +41,7 @@ public class GameService {
 
                 num = scanner.nextInt();
 
-                if (num >= 1 && num <= 6) {
+                if (num >= 1 && num <= 5) {
                     break;
                 } else {
                     messageUtil.getButtonErrorMsg();
@@ -57,22 +56,17 @@ public class GameService {
                     break;
                 case 2:
                     System.out.println("\n\n");
-                    System.out.println("도움말:???????????");
-                    // 추가적인 도움말 내용
+                    System.out.println("도움말");
+                    helpMessage();
                     break;
                 case 3:
-                    System.out.println("\n\n");
-                    System.out.println("게임 랭킹을 조회합니다");
-                    // 여기에 랭킹 조회 코드 추가
-                    break;
-                case 4:
                     System.out.println("\n\n");
                     System.out.print("새 비밀번호를 입력하세요 : ");
                     String newPassword = scanner.next();
                     // 여기에 비밀번호 수정 코드 추가
                     System.out.println("비밀번호가 변경되었습니다.");
                     break;
-                case 5:
+                case 4:
                     System.out.println("\n\n");
                     System.out.print("정말로 회원 탈퇴하시겠습니까? (y/n) ");
                     String confirm = scanner.next();
@@ -83,10 +77,10 @@ public class GameService {
                         System.out.println("회원 탈퇴가 취소되었습니다.");
                     }
                     break;
-                case 6:
+                case 5:
                     System.out.println("\n\n");
                     System.out.println("게임을 종료합니다.");
-                    running = false; // 게임 종료
+                    running = false;
                     break;
             }
 
@@ -116,6 +110,11 @@ public class GameService {
         } else if (mode == 2) {
             horrorGameStart();
         }
+    }
+
+    public void helpMessage() {
+        System.out.println("\n\n");
+        messageUtil.getHelpMessage();
     }
 
     private void startGuessingGame() {
