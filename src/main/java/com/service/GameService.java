@@ -1,5 +1,6 @@
 package com.service;
 
+import com.util.HorrorMessageUtil;
 import com.util.ImageUtil;
 import com.util.MessageUtil;
 import com.util.TimeUtil;
@@ -10,13 +11,16 @@ public class GameService {
 
     static Scanner scanner = new Scanner(System.in);
     static MessageUtil messageUtil = new MessageUtil();
+    static ImageUtil imageUtil = new ImageUtil();
     static TimeUtil timeUtil = new TimeUtil();
+    static HorrorMessageUtil horrorMessageUtil = new HorrorMessageUtil();
     static boolean running = true;
 
     public void startGame() {
         messageUtil.getStartMsg();
         selectStartGame();
     }
+
     public void selectStartGame() {
 
         while (running) {
@@ -29,14 +33,20 @@ public class GameService {
             System.out.println("6. 게임 종료");
             System.out.print("원하는 메뉴의 번호를 입력해주세요. : ");
 
-            while (!scanner.hasNextInt()) {
-                scanner.next();
-                messageUtil.getButtonErrorMsg();
-            }
-            int num = scanner.nextInt();
-            while(num<1 || num>6) {
-                messageUtil.getButtonErrorMsg();
+            int num = 0;
+            while (true) {
+                while (!scanner.hasNextInt()) {
+                    scanner.next();
+                    messageUtil.getButtonErrorMsg();
+                }
+
                 num = scanner.nextInt();
+
+                if (num >= 1 && num <= 6) {
+                    break;
+                } else {
+                    messageUtil.getButtonErrorMsg();
+                }
             }
 
             switch (num) {
@@ -96,7 +106,7 @@ public class GameService {
         }
 
         int mode = scanner.nextInt();
-        while(!(mode==1 || mode==2)) {
+        while (!(mode == 1 || mode == 2)) {
             messageUtil.getButtonErrorMsg();
             mode = scanner.nextInt();
         }
@@ -111,37 +121,63 @@ public class GameService {
         System.out.println();
     }
 
-    public void gameFailImgView() {
-        ImageUtil message = new ImageUtil();
-        System.out.println(message.getBossImg());
+    public void horrorGameStart() {
+        horrorMessageUtil.getWarningMsg();
+        timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameStartMsg(), 30);
+        System.out.println(imageUtil.horrorGameStartImg());
 
-        int count = 0;
-        while (count < 10) {
-            System.out.println(message.horrorImg1());
-            System.out.println(message.horrorImg2());
-            count++;
-        }
-
-        String textToBlink = message.horrorImg1();
-        String textToBlink2 = message.horrorImg2();
-        int interval = 50; // 깜빡임 간격 (밀리초 단위)
-        int repetitions = 100; // 깜빡임 반복 횟수
-
-        try {
-            for (int i = 0; i < repetitions; i++) {
-                System.out.print("\r" + textToBlink);
-                Thread.sleep(interval); // 대기
-                System.out.print("\r" + textToBlink2);
-                Thread.sleep(interval); // 대기
-            }
-        } catch (InterruptedException e) {
-
-        }
+        horrorGameLevel1();
     }
 
-    private void horrorGameStart() {
-        timeUtil.slowPrinter(messageUtil.getHorrorGameStartMsg(), 30);
-        System.out.println();
+    public void horrorGameLevel1() {
+        System.out.println("문을 열고 들어가려면 1번을 입력해주세요.");
+
+        while (true) {
+            while (!scanner.hasNextInt()) {
+                scanner.next();
+                messageUtil.getButtonErrorMsg();
+            }
+
+            int num = scanner.nextInt();
+            if (num == 1) {
+                break;
+            } else {
+                messageUtil.getButtonErrorMsg();
+            }
+        }
+        timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameFirstMsg(), 20);
+        System.out.println(imageUtil.horrorGameFirstImg());
+
+        System.out.println(messageUtil.getGameEndMsg());
+        while (true) {
+            while (!scanner.hasNextLine()) {
+                scanner.next();
+                messageUtil.getButtonErrorMsg();
+            }
+
+            String c = scanner.nextLine();
+            if ("병동".equals(c)) {
+                System.out.println("\n정답입니다. 병동으로 이동합니다.\n\n");
+                break;
+            } else if ("h".equals(c)) {
+                System.out.println("1. 정답은 두 글자 입니다.");
+                System.out.println("2. 나침반 왼쪽에 다른 문자가 있습니다.\n" +
+                        " _             _    _    _       \n" +
+                        "| |           | |  | |  | |      \n" +
+                        "| |__    ___  | |_ | |_ | |  ___ \n" +
+                        "| '_ \\  / _ \\ | __|| __|| | / _ \\\n" +
+                        "| |_) || (_) || |_ | |_ | ||  __/\n" +
+                        "|_.__/  \\___/  \\__| \\__||_| \\___|" + "\n");
+                System.out.println(messageUtil.getAnswerMsg());
+                System.out.println("정답 : ");
+            } else if ("정답".equals(c)) {
+                System.out.println("\n 정답은 [병동] 입니다. \n");
+                System.out.println("정답 : ");
+            } else {
+                messageUtil.getButtonErrorMsg();
+            }
+        }
+
     }
 
 }

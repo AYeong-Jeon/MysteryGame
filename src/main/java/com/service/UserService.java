@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class UserService {
 
     static Scanner scanner = new Scanner(System.in);
-    private UserRepository userRepository = new UserRepository();
+    public UserRepository userRepository = new UserRepository();
     static String loggedInUser = null;
 
     public String login() {
@@ -77,4 +77,5 @@ public class UserService {
             }
         }
     }
+
 }

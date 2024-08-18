@@ -41,6 +41,7 @@ public class TimeUtil {
                 e.printStackTrace();
             }
         }
+        System.out.println();
     }
 
 }
