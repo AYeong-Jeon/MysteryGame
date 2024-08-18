@@ -11,7 +11,7 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
     static GameService gameService = new GameService();
     public static UserService userService = new UserService();
-    static MessageUtil messageUtil = new MessageUtil();
+    public static MessageUtil messageUtil = new MessageUtil();
 
     public static void main(String[] args) {
         while (true) {

@@ -17,10 +17,6 @@ public class MessageUtil {
         return "(정답을 보시려면 [정답]이라고 입력해주세요.)";
     }
 
-    public void getHintMsg () {
-        System.out.println("힌트를 보시겠습니까?(y/n)");
-    }
-
     public void getLoadUserErrorMsg() {
         System.out.println("회원정보를 불러오는 중 오류가 발생했습니다.");
     }
