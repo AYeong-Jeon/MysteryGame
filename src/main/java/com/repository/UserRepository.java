@@ -11,21 +11,40 @@ public class UserRepository {
     //private static final String USER_FILE = "C:/Users/USER/Desktop/Users.txt";
 
     public Map<String, User> loadUsers() {
-        if (new File(USER_FILE).exists()) {
-            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(USER_FILE))) {
+        File file = new File(USER_FILE);
+        if (file.exists()) {
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
                 return (Map<String, User>) ois.readObject();
+            } catch (EOFException e) {
+                return new HashMap<>();
             } catch (IOException | ClassNotFoundException e) {
-                throw new RuntimeException("loadUserErr");
+                System.err.println("사용자 정보를 불러오는 중 오류가 발생했습니다.");
+                e.printStackTrace();
+                throw new RuntimeException("사용자 정보를 불러오는 중 오류가 발생했습니다.", e);
             }
         }
         return new HashMap<>();
     }
 
     public void saveUsers(Map<String, User> users) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USER_FILE))) {
+        File file = new File(USER_FILE);
+        if (!file.exists()) {
+            try {
+                file.createNewFile(); // 파일이 없는 경우 생성
+            } catch (IOException e) {
+                System.err.println("파일 생성 중 오류가 발생했습니다.");
+                e.printStackTrace();
+                throw new RuntimeException("파일 생성 중 오류가 발생했습니다.", e);
+            }
+        }
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
             oos.writeObject(users);
+            System.out.println("사용자 정보를 파일에 저장했습니다.");
         } catch (IOException e) {
-            throw new RuntimeException("saveUserErr");
+            System.err.println("파일 경로: " + USER_FILE);
+            e.printStackTrace();
+            throw new RuntimeException("사용자 정보를 저장하는 중 오류가 발생했습니다.", e);
         }
     }
 
