@@ -19,8 +19,6 @@ public class UserRepository {
                 return new HashMap<>();
             } catch (IOException | ClassNotFoundException e) {
                 System.err.println("사용자 정보를 불러오는 중 오류가 발생했습니다.");
-                e.printStackTrace();
-                throw new RuntimeException("사용자 정보를 불러오는 중 오류가 발생했습니다.", e);
             }
         }
         return new HashMap<>();
@@ -33,8 +31,6 @@ public class UserRepository {
                 file.createNewFile(); // 파일이 없는 경우 생성
             } catch (IOException e) {
                 System.err.println("파일 생성 중 오류가 발생했습니다.");
-                e.printStackTrace();
-                throw new RuntimeException("파일 생성 중 오류가 발생했습니다.", e);
             }
         }
 
@@ -43,8 +39,6 @@ public class UserRepository {
             System.out.println("사용자 정보를 파일에 저장했습니다.");
         } catch (IOException e) {
             System.err.println("파일 경로: " + USER_FILE);
-            e.printStackTrace();
-            throw new RuntimeException("사용자 정보를 저장하는 중 오류가 발생했습니다.", e);
         }
     }
 

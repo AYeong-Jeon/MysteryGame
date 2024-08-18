@@ -52,11 +52,10 @@ public class Main {
         try {
             return userService.login();
         } catch (Exception e) {
-            if ("loadUserErr".equals(e.getMessage())) {
-                System.out.println("사용자 정보를 불러오는 중 오류가 발생했습니다.");
-            } else {
-                e.printStackTrace();
+            if (!e.getMessage().isEmpty()) {
+                e.getMessage();
             }
+
             return null;
         }
     }
