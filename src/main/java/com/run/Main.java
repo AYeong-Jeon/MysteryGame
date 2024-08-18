@@ -1,13 +1,9 @@
 package com.run;
 
-import com.aggregate.User;
 import com.service.GameService;
 import com.service.UserService;
 import com.util.MessageUtil;
 
-import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Main {

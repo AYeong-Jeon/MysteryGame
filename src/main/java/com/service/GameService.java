@@ -108,7 +108,7 @@ public class GameService {
         } else {
             System.out.println("\n\n잘못된 입력입니다. 게임이 선택되지 않았습니다.\n");
         }
-        System.out.println("");
+        System.out.println();
     }
 
     public void gameFailImgView() {
