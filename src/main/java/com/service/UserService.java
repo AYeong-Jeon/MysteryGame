@@ -113,7 +113,7 @@ public class UserService {
         } else {
             for (Map.Entry<String, User> entry : users.entrySet()) {
                 if(userId.equals(entry.getKey())) {
-                    User updatedUser = new User(entry.getValue().getName(), entry.getValue().getId(), entry.getValue().getPwd(), entry.getValue().getScore(), totalTime);
+                    User updatedUser = new User(entry.getValue().getName(), entry.getValue().getId(), entry.getValue().getPwd(), totalTime);
                     userMap.put(userId, updatedUser);
                 } else {
                     userMap.put(entry.getKey(), entry.getValue());
