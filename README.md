@@ -110,7 +110,7 @@
             <img src="src/main/image/게임 랭킹 조회.gif" alt="게임 랭킹 조회_gif">
         </details>
 
-<summary>내 정보 수정</summary>
+<summary>내 정보</summary>
         <details>
             <summary>  </summary>
             <img src="src/main/image/내 정보.gif" alt="내 정보_gif">
