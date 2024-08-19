@@ -3,9 +3,6 @@ package com.service;
 import com.aggregate.User;
 import com.repository.UserRepository;
 import com.util.ImageUtil;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
 
 import java.util.*;
 
