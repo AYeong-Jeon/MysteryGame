@@ -1,1 +1,3 @@
-ы sr &com.ohgiraffers.testapp.aggregate.User4앇Eㅨ? I ageI noL 	bloodTypet -Lcom/ohgiraffers/testapp/aggregate/BloodType;[  hobbiest [Ljava/lang/String;L idt Ljava/lang/String;L pwdq ~ xp      ~r +com.ohgiraffers.testapp.aggregate.BloodType          xr java.lang.Enum          xpt Aur [Ljava.lang.String;?V五{G  xp   t 諛쒕젅t ?섏쁺t user01t pass01sq ~     (   ~q ~ t Ouq ~ 	   t ?곹솕媛먯긽t ?낆꽌t 紐낆긽t user03t pass03sq ~        ~q ~ t Buq ~ 	   t 肄붾뵫t 	?щ━湲컏 user04t pass04
+ы sr java.util.HashMap 憫?`? F
+        loadFactorI 	thresholdxp?@     w      t ayeongsr com.aggregate.Userm?찺@? I scoreL idt Ljava/lang/String;L nameq ~ L pwdq ~ L
+        totalPlayTimeq ~ xp    q ~ t 	?꾩븘?걎 1234t 00:00:00t  sungminsq ~     q ~ 	t 	?댁꽦誘펤 1234t 00:00:00x

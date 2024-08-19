@@ -9,7 +9,6 @@ public class User implements Serializable {
     private int score;
     private String totalPlayTime;
 
-    // Constructor
     public User(String name, String id, String pwd, int score, String totalPlayTime) {
         this.name = name;
         this.id = id;
@@ -18,7 +17,6 @@ public class User implements Serializable {
         this.totalPlayTime = totalPlayTime;
     }
 
-    // Getters and setters (optional)
     public String getName() {
         return name;
     }
