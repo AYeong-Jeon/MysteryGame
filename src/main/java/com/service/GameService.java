@@ -23,12 +23,12 @@ public class GameService {
 
     private static boolean running = true;
 
-    public void startGame() {
+    public void startGame(String userId) {
         timeUtil.slowPrinter(messageUtil.getStartMsg(), 50);
-        selectStartGame();
+        selectStartGame(userId);
     }
 
-    public void selectStartGame() {
+    public void selectStartGame(String userId) {
         while (running) {
             System.out.println("1. 게임하기");
             System.out.println("2. 도움말");
@@ -62,10 +62,7 @@ public class GameService {
                     helpMessage();
                     break;
                 case 3:
-                    System.out.println("\n\n");
-                    System.out.print("새 비밀번호를 입력하세요 : ");
-                    String newPassword = scanner.next();
-                    if (userService.updatePassword()) {
+                    if (userService.updatePassword(userId)) {
                         System.out.println("비밀번호가 변경되었습니다.");
                     } else {
                         System.err.println("비밀번호 변경 중 오류가 발생하였습니다.");

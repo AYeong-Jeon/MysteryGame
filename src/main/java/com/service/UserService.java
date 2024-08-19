@@ -4,6 +4,7 @@ import com.aggregate.User;
 import com.repository.UserRepository;
 import com.util.ImageUtil;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -79,8 +80,34 @@ public class UserService {
         }
     }
 
-    public boolean updatePassword() {
+    public boolean updatePassword(String userId) {
         boolean result = false;
+
+        while (true) {
+            System.out.print("\n본인 확인을 위해 로그인한 아이디를 입력하세요 : \n");
+            String newUserId = scanner.nextLine();
+            if (!userId.equals(newUserId)) {
+                System.out.println("\n\n회원 아이디가 일치하지 않습니다. 다시 입력해주세요.\n");
+            } else {
+                break;
+
+            }
+        }
+
+        System.out.print("\n\n변경할 새 비밀번호를 입력하세요 : ");
+        String newPassword = scanner.nextLine();
+
+        Map<String, User> userMap = new HashMap<>();
+        Map<String, User> users = userRepository.loadUsers();
+        for(int i = 0 ; i < users.size() ; i++) {
+            if(userId.equals(users.get(i).getId())) {
+                User newUser = new User(users.get(i).getName(), users.get(i).getId(), newPassword, users.get(i).getScore(), users.get(i).getTotalPlayTime());
+                userMap.put(users.get(i).getId(), newUser);
+            }
+            userMap.put(users.get(i).getId(), users.get(i));
+        }
+        userRepository.saveUsers(userMap);
+        result = true;
 
         return result;
     }

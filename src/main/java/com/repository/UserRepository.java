@@ -42,4 +42,13 @@ public class UserRepository {
         }
     }
 
+    public boolean deleteFile() {
+        File file = new File(USER_FILE);
+        if( file.exists() ){
+            return file.delete();
+        }else{
+            return false;
+        }
+    }
+
 }

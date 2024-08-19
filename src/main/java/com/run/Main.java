@@ -39,7 +39,7 @@ public class Main {
             }
 
             if (loggedInUser != null) {
-                startGame();
+                startGame(loggedInUser);
                 break;
             } else {
                 System.out.println("로그인이 필요합니다.");
@@ -69,9 +69,9 @@ public class Main {
         }
     }
 
-    public static void startGame() {
+    public static void startGame(String userId) {
         try {
-            gameService.startGame();
+            gameService.startGame(userId);
         } catch (Exception e) {
             e.printStackTrace();
         }
