@@ -19,7 +19,7 @@ public class GameService {
     static boolean running = true;
 
     public void startGame() {
-        messageUtil.getStartMsg();
+        timeUtil.slowPrinter(messageUtil.getStartMsg(), 50);
         selectStartGame();
     }
 
@@ -40,7 +40,6 @@ public class GameService {
                 }
 
                 num = scanner.nextInt();
-
                 if (num >= 1 && num <= 5) {
                     break;
                 } else {
@@ -50,8 +49,6 @@ public class GameService {
 
             switch (num) {
                 case 1:
-                    System.out.println("\n\n");
-                    System.out.println("게임을 시작합니다.");
                     gameStart();
                     break;
                 case 2:
@@ -89,8 +86,8 @@ public class GameService {
     }
 
     public void gameStart() {
-        System.out.println("\n\n");
-        System.out.println("게임을 선택하세요: ");
+        System.out.println("\n\n게임을 시작합니다.\n\n");
+        System.out.println("게임을 선택하세요 : ");
         System.out.println("1. 추리 게임");
         System.out.println("2. 공포 게임");
 
@@ -106,18 +103,17 @@ public class GameService {
         }
 
         if (mode == 1) {
-            startGuessingGame();
+            guessingGameStart();
         } else if (mode == 2) {
             horrorGameStart();
         }
     }
 
     public void helpMessage() {
-        System.out.println("\n\n");
         messageUtil.getHelpMessage();
     }
 
-    private void startGuessingGame() {
+    private void guessingGameStart() {
         System.out.println(guessingMessageUtil.guessingGameStartMsg());
         System.out.println();
 
@@ -133,43 +129,41 @@ public class GameService {
             allQuestionsCorrect = false;
         }
         if (allQuestionsCorrect) {
-            System.out.println("모든 문제를 맞췄습니다! 축하합니다!");
+            System.out.println("\n모든 문제를 맞췄습니다! 축하합니다!\n\n");
+            imageUtil.escape1();
         } else {
-            System.out.println("문제를 모두 맞추지 못했습니다. 다시 시도해 보세요.");
+            System.out.println("\n문제를 모두 맞추지 못했습니다. 다시 시도해 보세요.\n");
         }
     }
+
     private boolean playMystery(int questionNumber) {
         String message = getMysteryQuestion(questionNumber);
         timeUtil.slowPrinter(message, 30);
-        System.out.print(messageUtil.getGameEndMsg());
+        System.out.println("\n 정답을 입력해 주세요. (힌트는 [h]를 입력해 주세요.) : \n");
 
         boolean isCorrect = false;
-
         while (!isCorrect) {
             String input = scanner.next();
 
             if ("h".equalsIgnoreCase(input)) {
                 provideHint(questionNumber);
-                System.out.print(messageUtil.getGameEndMsg()); // 힌트 후에 다시 메시지 출력
+                System.out.print(messageUtil.getGameEndMsg());
             } else {
                 try {
-                    int suspect = Integer.parseInt(input); // 입력이 숫자라면 정답 체크
+                    int suspect = Integer.parseInt(input);
                     isCorrect = checkAnswer(questionNumber, suspect);
                     if (isCorrect) {
                         System.out.println("정답입니다!");
                     } else {
                         System.out.println("틀렸습니다. 다시 시도해 보세요.");
-                        System.out.print(messageUtil.getGameEndMsg()); // 오답 후에 다시 메시지 출력
                     }
                 } catch (NumberFormatException e) {
                     System.out.println("잘못된 입력입니다. 숫자를 입력하거나 'h'를 입력해 주세요.");
-                    System.out.print(messageUtil.getGameEndMsg());
                 }
             }
         }
         return true;
     }
-
 
     private String getMysteryQuestion(int questionNumber) {
         switch (questionNumber) {
@@ -183,6 +177,7 @@ public class GameService {
                 return "문제가 존재하지 않습니다.";
         }
     }
+
     private void provideHint(int questionNumber) {
         switch (questionNumber) {
             case 1:
@@ -202,6 +197,7 @@ public class GameService {
                 break;
         }
     }
+
     private boolean checkAnswer(int questionNumber, int suspect) {
         switch (questionNumber) {
             case 1:
@@ -237,6 +233,7 @@ public class GameService {
                 messageUtil.getButtonErrorMsg();
             }
         }
+
         scanner.nextLine();
         timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameFirstMsg(), 40);
         System.out.println(imageUtil.horrorGameFirstImg());
@@ -316,7 +313,7 @@ public class GameService {
     }
 
     public void horrorGameSuccess () {
-        horrorMessageUtil.gameFailImgView();
+        horrorMessageUtil.horrorImgView();
         timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameFinalMsg(), 20);
         System.out.println("\n\n");
     }

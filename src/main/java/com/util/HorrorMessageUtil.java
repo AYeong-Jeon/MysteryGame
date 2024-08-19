@@ -5,9 +5,8 @@ public class HorrorMessageUtil {
     private static final String RED = "\033[0;31m";
     private static final String RESET = "\033[0m";
 
-    public void gameFailImgView() {
+    public void horrorImgView() {
         ImageUtil message = new ImageUtil();
-        System.out.println(message.getBossImg());
 
         int count = 0;
         while (count < 10) {
@@ -19,14 +18,14 @@ public class HorrorMessageUtil {
         String textToBlink = message.horrorImg1();
         String textToBlink2 = message.horrorImg2();
         int interval = 50; // 깜빡임 간격 (밀리초 단위)
-        int repetitions = 30; // 깜빡임 반복 횟수
+        int repetitions = 20; // 깜빡임 반복 횟수
 
         try {
             for (int i = 0; i < repetitions; i++) {
                 System.out.print("\r" + textToBlink);
-                Thread.sleep(interval); // 대기
+                Thread.sleep(interval);
                 System.out.print("\r" + textToBlink2);
-                Thread.sleep(interval); // 대기
+                Thread.sleep(interval);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
