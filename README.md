@@ -61,8 +61,13 @@
 ![img.jpg](src/main/image/start.jpg)
 ### 로그인 
 - 회원가입
+  - ![img.jpg](src/main/image/createUser.jpg)
+  - ![img.jpg](src/main/image/saveUser.jpg)
 - 로그인
-- 로그아웃
+-   - ![img.jpg](src/main/image/login.jpg)
+-   - ![img.jpg](src/main/image/loadUser.jpg)
+- 회원탈퇴
+- -   - ![img.jpg](src/main/image/deleteUser.jpg)
 
 ### 게임
 #### 3단계로 이루어진 스토리형 게임 (추리, 공포)
