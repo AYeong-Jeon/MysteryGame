@@ -143,7 +143,7 @@ public class GameService {
             String totalTime = timeUtil.totalPlayTime(startTime, endTime);
             userService.updateTotalTime(userId, totalTime);
             System.out.println("\n모든 문제를 맞췄습니다! 축하합니다!\n\n");
-            imageUtil.escape1();
+            System.out.println(imageUtil.escape1()+"\n\n");;
         } else {
             System.out.println("\n문제를 모두 맞추지 못했습니다. 다시 시도해 보세요.\n");
         }

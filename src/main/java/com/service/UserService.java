@@ -87,7 +87,7 @@ public class UserService {
             System.out.println("\n\n 문제를 풀어라. \n\n");
         } else {
             List<Map.Entry<String, User>> userList = new ArrayList<>(users.entrySet());
-            userList.sort(Comparator.comparing(entry -> entry.getValue().getTotalPlayTime()));
+            userList.sort(Comparator.comparing(entry -> entry.getValue().getTotalPlayTime()));    // totalTime을 오름차순으로 정렬
 
             Map<String, User> sortedUsers = new LinkedHashMap<>();
             for (Map.Entry<String, User> entry : userList) {
@@ -98,7 +98,7 @@ public class UserService {
             for (Map.Entry<String, User> entry : sortedUsers.entrySet()) {
                 count++;
                 System.out.println("|  " + count + "  |  ID : " + entry.getKey() + "  |  User : " + entry.getValue().getName() + "  |  TotalPlayTime : " + entry.getValue().getTotalPlayTime() + " | ");
-                if (count == 10) break;
+                if (count == 10) break;    // 상위 10위까지만 출력
             }
             System.out.println("\n\n");
         }
