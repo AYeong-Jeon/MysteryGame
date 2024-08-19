@@ -100,11 +100,12 @@ public class UserService {
         Map<String, User> userMap = new HashMap<>();
         Map<String, User> users = userRepository.loadUsers();
         for(int i = 0 ; i < users.size() ; i++) {
-            if(userId.equals(users.get(i).getId())) {
-                User newUser = new User(users.get(i).getName(), users.get(i).getId(), newPassword, users.get(i).getScore(), users.get(i).getTotalPlayTime());
-                userMap.put(users.get(i).getId(), newUser);
+            if(userId.equals(users.get(userId).getId())) {
+                User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), newPassword, users.get(userId).getScore(), users.get(userId).getTotalPlayTime());
+                userMap.put(users.get(userId).getId(), newUser);
             }
-            userMap.put(users.get(i).getId(), users.get(i));
+            //바뀐거 말고 일반은 그대로 넣기
+            //userMap.put(users.get(i));
         }
         userRepository.saveUsers(userMap);
         result = true;
