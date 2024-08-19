@@ -3,6 +3,9 @@ package com.service;
 import com.aggregate.User;
 import com.repository.UserRepository;
 import com.util.ImageUtil;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 import java.util.*;
 
@@ -160,15 +163,35 @@ public class UserService {
 
     public boolean deleteUser() {
         boolean result = false;
-
         System.out.print("\n\n정말로 회원 탈퇴하시겠습니까? (y/n) ");
         String confirm = scanner.next();
+
         if (confirm.equalsIgnoreCase("y")) {
-            imageUtil.textBoxImg();
-            System.out.println("회원 탈퇴가 완료되었습니다.");
-            result = true;
+            System.out.println(imageUtil.textBoxImg());
+            System.out.print("\n\n선택: ");
+            int finalConfirm = scanner.nextInt();
+
+            if (finalConfirm == 1) {
+                String userIdToDelete = loggedInUser;
+
+                Map<String, User> users = userRepository.loadUsers();
+
+                if (users.containsKey(userIdToDelete)) {
+                    users.remove(userIdToDelete);
+                    userRepository.saveUsers(users);
+
+                    System.out.println("회원 탈퇴가 완료되었습니다.");
+                    result = true;
+                    System.exit(0);
+                } else {
+                    System.out.println("사용자를 찾을 수 없습니다.");
+                }
+            } else {
+                System.out.println("회원 탈퇴가 취소되었습니다.");
+                result = false;
+            }
         } else {
-            result = false;
+            System.out.println("회원 탈퇴가 취소되었습니다.");
         }
         return result;
     }
