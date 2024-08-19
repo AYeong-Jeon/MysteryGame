@@ -11,7 +11,6 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
     static GameService gameService = new GameService();
     public static UserService userService = new UserService();
-    public static MessageUtil messageUtil = new MessageUtil();
 
     public static void main(String[] args) {
         while (true) {
@@ -64,12 +63,8 @@ public class Main {
         try {
             userService.createUser();
         } catch (Exception e) {
-            if ("saveUserErr".equals(e.getMessage())) {
-                System.out.println("사용자 정보를 저장하는 중 오류가 발생했습니다.");
-            } else if ("loadUserErr".equals(e.getMessage())) {
-                System.out.println("사용자 정보를 불러오는 중 오류가 발생했습니다.");
-            } else {
-                e.printStackTrace();
+            if (!e.getMessage().isEmpty()) {
+                e.getMessage();
             }
         }
     }
