@@ -170,7 +170,6 @@ public class UserService {
 
             if (finalConfirm == 1) {
                 String userIdToDelete = loggedInUser;
-
                 Map<String, User> users = userRepository.loadUsers();
 
                 if (users.containsKey(userIdToDelete)) {
