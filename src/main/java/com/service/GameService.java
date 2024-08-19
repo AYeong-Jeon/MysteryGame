@@ -10,13 +10,18 @@ import java.util.Scanner;
 
 public class GameService {
 
-    static Scanner scanner = new Scanner(System.in);
-    static GuessingMessageUtil guessingMessageUtil = new GuessingMessageUtil();
-    static ImageUtil imageUtil = new ImageUtil();
-    static TimeUtil timeUtil = new TimeUtil();
-    static MessageUtil messageUtil = new MessageUtil(); // MessageUtil 인스턴스 생성
-    static HorrorMessageUtil horrorMessageUtil = new HorrorMessageUtil();
-    static boolean running = true;
+    Scanner scanner = new Scanner(System.in);
+
+    public ImageUtil imageUtil = new ImageUtil();
+    public TimeUtil timeUtil = new TimeUtil();
+    public MessageUtil messageUtil = new MessageUtil();
+
+    public HorrorMessageUtil horrorMessageUtil = new HorrorMessageUtil();
+    public GuessingMessageUtil guessingMessageUtil = new GuessingMessageUtil();
+
+    public UserService userService = new UserService();
+
+    private static boolean running = true;
 
     public void startGame() {
         timeUtil.slowPrinter(messageUtil.getStartMsg(), 50);
@@ -60,16 +65,15 @@ public class GameService {
                     System.out.println("\n\n");
                     System.out.print("새 비밀번호를 입력하세요 : ");
                     String newPassword = scanner.next();
-                    // 여기에 비밀번호 수정 코드 추가
-                    System.out.println("비밀번호가 변경되었습니다.");
+                    if (userService.updatePassword()) {
+                        System.out.println("비밀번호가 변경되었습니다.");
+                    } else {
+                        System.err.println("비밀번호 변경 중 오류가 발생하였습니다.");
+                    }
                     break;
                 case 4:
-                    System.out.println("\n\n");
-                    System.out.print("정말로 회원 탈퇴하시겠습니까? (y/n) ");
-                    String confirm = scanner.next();
-                    if (confirm.equalsIgnoreCase("y")) {
+                    if(userService.deleteUser()) {
                         System.out.println("회원 탈퇴가 완료되었습니다.");
-                        // 여기에 회원 탈퇴 코드 추가
                     } else {
                         System.out.println("회원 탈퇴가 취소되었습니다.");
                     }

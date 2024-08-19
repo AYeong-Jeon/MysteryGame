@@ -2,6 +2,7 @@ package com.service;
 
 import com.aggregate.User;
 import com.repository.UserRepository;
+import com.util.ImageUtil;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -9,7 +10,10 @@ import java.util.Scanner;
 public class UserService {
 
     static Scanner scanner = new Scanner(System.in);
+
     public UserRepository userRepository = new UserRepository();
+    public ImageUtil imageUtil = new ImageUtil();
+
     static String loggedInUser = null;
 
     public String login() {
@@ -75,4 +79,24 @@ public class UserService {
         }
     }
 
+    public boolean updatePassword() {
+        boolean result = false;
+
+        return result;
+    }
+
+    public boolean deleteUser() {
+        boolean result = false;
+
+        System.out.print("\n\n정말로 회원 탈퇴하시겠습니까? (y/n) ");
+        String confirm = scanner.next();
+        if (confirm.equalsIgnoreCase("y")) {
+            imageUtil.textBoxImg();
+            System.out.println("회원 탈퇴가 완료되었습니다.");
+            result = true;
+        } else {
+            result = false;
+        }
+        return result;
+    }
 }
