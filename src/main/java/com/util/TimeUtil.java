@@ -22,7 +22,7 @@ public class TimeUtil {
         long minutesBetween = ChronoUnit.MINUTES.between(startTime, endTime) % 60;
 
 
-        return hoursBetween + "시간 " + minutesBetween + "분 ";
+        return hoursBetween + " : " + minutesBetween;
     }
 
     public void slowPrinter(String printMessage, int printTime) {

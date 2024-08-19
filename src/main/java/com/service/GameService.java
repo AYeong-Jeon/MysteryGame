@@ -21,6 +21,9 @@ public class GameService {
 
     public UserService userService = new UserService();
 
+    public String startTime;
+    public String endTime;
+
     private static boolean running = true;
 
     public void startGame(String userId) {
@@ -55,7 +58,7 @@ public class GameService {
 
             switch (num) {
                 case 1:
-                    gameStart();
+                    gameStart(userId);
                     break;
                 case 2:
                     System.out.println("\n\n");
@@ -91,7 +94,7 @@ public class GameService {
         }
     }
 
-    public void gameStart() {
+    public void gameStart(String userId) {
         System.out.println("\n\n게임을 시작합니다.\n\n");
         System.out.println("게임을 선택하세요 : ");
         System.out.println("1. 추리 게임");
@@ -109,9 +112,9 @@ public class GameService {
         }
 
         if (mode == 1) {
-            guessingGameStart();
+            guessingGameStart(userId);
         } else if (mode == 2) {
-            horrorGameStart();
+            horrorGameStart(userId);
         }
     }
 
@@ -119,9 +122,10 @@ public class GameService {
         messageUtil.getHelpMessage();
     }
 
-    private void guessingGameStart() {
+    private void guessingGameStart(String userId) {
         System.out.println(guessingMessageUtil.guessingGameStartMsg());
         System.out.println();
+        startTime = timeUtil.getNowTime();
 
         boolean allQuestionsCorrect = true;
 
@@ -135,6 +139,9 @@ public class GameService {
             allQuestionsCorrect = false;
         }
         if (allQuestionsCorrect) {
+            endTime = timeUtil.getNowTime();
+            String totalTime = timeUtil.totalPlayTime(startTime, endTime);
+            userService.updateTotalTime(userId, totalTime);
             System.out.println("\n모든 문제를 맞췄습니다! 축하합니다!\n\n");
             imageUtil.escape1();
         } else {
@@ -216,14 +223,15 @@ public class GameService {
                 return false;
         }
     }
-    public void horrorGameStart() {
+    public void horrorGameStart(String userId) {
         horrorMessageUtil.getWarningMsg();
         timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameStartMsg(), 30);
         System.out.println(imageUtil.horrorGameStartImg());
 
-        horrorGameLevel1();
+        startTime = timeUtil.getNowTime();
+        horrorGameLevel1(userId);
     }
-    public void horrorGameLevel1() {
+    public void horrorGameLevel1(String userId) {
         System.out.println("문을 열고 들어가려면 1번을 입력해주세요.");
 
         while (true) {
@@ -254,7 +262,7 @@ public class GameService {
             String c = scanner.nextLine();
             if ("병동".equals(c)) {
                 System.out.println("\n정답입니다. 병동으로 이동합니다.\n\n");
-                horrorGameLevel2();
+                horrorGameLevel2(userId);
                 break;
             } else if ("힌트".equals(c)) {
                 getHint(1);
@@ -266,7 +274,7 @@ public class GameService {
         }
     }
 
-    public void horrorGameLevel2() {
+    public void horrorGameLevel2(String userId) {
         timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameSecondMsg(), 50);
         System.out.println(imageUtil.horrorGameSecondImg());
         System.out.println(messageUtil.getGameEndMsg());
@@ -280,7 +288,7 @@ public class GameService {
             String c = scanner.nextLine();
             if ("원장".equals(c)) {
                 System.out.println("\n정답입니다. 원장의 비밀 실험실로 이동합니다.\n\n");
-                horrorGameLevel3();
+                horrorGameLevel3(userId);
                 break;
             } else if ("힌트".equals(c)) {
                 getHint(2);
@@ -292,7 +300,7 @@ public class GameService {
         }
     }
 
-    public void horrorGameLevel3() {
+    public void horrorGameLevel3(String userId) {
         timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameThirdMsg(), 50);
         System.out.println(imageUtil.horrorGameThirdImg());
         System.out.println(messageUtil.getGameEndMsg());
@@ -306,7 +314,7 @@ public class GameService {
             String c = scanner.nextLine();
             if ("26734".equals(c)) {
                 System.out.println("\n정답입니다. 출구로 이동합니다.\n\n");
-                horrorGameSuccess();
+                horrorGameSuccess(userId);
                 break;
             } else if ("힌트".equals(c)) {
                 getHint(3);
@@ -318,7 +326,11 @@ public class GameService {
         }
     }
 
-    public void horrorGameSuccess () {
+    public void horrorGameSuccess (String userId) {
+        endTime = timeUtil.getNowTime();
+        String totalTime = timeUtil.totalPlayTime(startTime, endTime);
+        userService.updateTotalTime(userId, totalTime);
+
         horrorMessageUtil.horrorImgView();
         timeUtil.slowPrinter(horrorMessageUtil.getHorrorGameFinalMsg(), 20);
         System.out.println("\n\n");

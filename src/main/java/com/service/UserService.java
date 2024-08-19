@@ -81,8 +81,9 @@ public class UserService {
     public void selectAllRanking() {
         Map<String, User> users = userRepository.loadUsers();
 
+        System.out.println(imageUtil.getBossImg());
+        System.out.println("\n===================================================================");
         if (users.isEmpty()) {
-            System.out.println(imageUtil.getBossImg());
             System.out.println("\n\n 문제를 풀어라. \n\n");
         } else {
             List<Map.Entry<String, User>> userList = new ArrayList<>(users.entrySet());
@@ -93,12 +94,32 @@ public class UserService {
                 sortedUsers.put(entry.getKey(), entry.getValue());
             }
 
+            int count = 0;
             for (Map.Entry<String, User> entry : sortedUsers.entrySet()) {
-                System.out.println("ID : " + entry.getKey() + "  |  User : " + entry.getValue().getName() + "  |  TotalPlayTime : " + entry.getValue().getTotalPlayTime() + " | ");
+                count++;
+                System.out.println("|  " + count + "  |  ID : " + entry.getKey() + "  |  User : " + entry.getValue().getName() + "  |  TotalPlayTime : " + entry.getValue().getTotalPlayTime() + " | ");
+                if (count == 10) break;
             }
-            System.out.println("\n\n\n");
+            System.out.println("\n\n");
         }
 
+    }
+
+    public void updateTotalTime(String userId, String totalTime) {
+        Map<String, User> userMap = new HashMap<>();
+        Map<String, User> users = userRepository.loadUsers();
+        if (users.isEmpty()) {
+            System.out.println("사용자 정보가 없습니다.");
+        } else {
+            for (Map.Entry<String, User> entry : users.entrySet()) {
+                if(userId.equals(users.get(userId).getId())) {
+                    User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), users.get(userId).getPwd(), users.get(userId).getScore(), totalTime);
+                    userMap.put(users.get(userId).getId(), newUser);
+                }
+                userMap.put(entry.getKey(), entry.getValue());
+            }
+        }
+        userRepository.saveUsers(userMap);
     }
 
     public boolean updatePassword(String userId) {
