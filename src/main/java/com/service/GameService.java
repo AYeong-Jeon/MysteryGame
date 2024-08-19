@@ -204,7 +204,7 @@ public class GameService {
             case 1:
                 return (suspect == 2);
             case 2:
-                return (suspect == 4);
+                return (suspect == 2);
             case 3:
                 return (suspect == 1);
             default:

@@ -213,7 +213,7 @@ public class ImageUtil {
 
     public String horrorGameThirdImg() {
         return  "┌──────────────────────────┐" + "\n" +
-                "│  1910년 8월 14일  ☀\uFE0E      │"+ "\n" +
+                "│  1910년 8월 14일  ☀\uFE0E     │"+ "\n" +
                 "│                           │"+ "\n" +
                 "│  오늘은 내  생@일이다.       │"+ "\n" +
                 "│  그런데... 오늘 환자가       │"+ "\n" +
