@@ -49,7 +49,7 @@ public class GameService {
                 }
 
                 num = scanner.nextInt();
-                if (num >= 1 && num <= 5) {
+                if (num >= 1 && num <= 6) {
                     break;
                 } else {
                     messageUtil.getButtonErrorMsg();
@@ -73,14 +73,14 @@ public class GameService {
                     if (userService.updatePassword(userId)) {
                         System.out.println("비밀번호가 변경되었습니다.");
                     } else {
-                        System.err.println("비밀번호 변경 중 오류가 발생하였습니다.");
+                        System.err.println("비밀번호 변경 중 오류가 발생하였습니다. 다시 시도해주세요.");
                     }
                     break;
                 case 5:
                     if(userService.deleteUser()) {
                         System.out.println("회원 탈퇴가 완료되었습니다.");
                     } else {
-                        System.out.println("회원 탈퇴가 취소되었습니다.");
+                        System.out.println("회원 탈퇴가 취소되었습니다. 다시 시도해주세요.");
                     }
                     break;
                 case 6:

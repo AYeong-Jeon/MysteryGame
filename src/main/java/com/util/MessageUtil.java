@@ -21,14 +21,6 @@ public class MessageUtil {
         return "(정답을 보시려면 [정답]이라고 입력해주세요.)";
     }
 
-    public void getLoadUserErrorMsg() {
-        System.out.println("회원정보를 불러오는 중 오류가 발생했습니다.");
-    }
-
-    public void getSaveErrorMsg() {
-        System.out.println("회원 정보를 저장하는 중 오류가 발생했습니다.");
-    }
-
     public void getButtonErrorMsg () {
         System.out.println("잘못 누르셨습니다. 다시 입력해주세요.");
     }
