@@ -32,9 +32,10 @@ public class GameService {
         while (running) {
             System.out.println("1. 게임하기");
             System.out.println("2. 도움말");
-            System.out.println("3. 회원 정보 수정");
-            System.out.println("4. 회원 탈퇴");
-            System.out.println("5. 게임 종료");
+            System.out.println("3. 게임 랭킹 조회");
+            System.out.println("4. 회원 정보 수정");
+            System.out.println("5. 회원 탈퇴");
+            System.out.println("6. 게임 종료");
             System.out.print("원하는 메뉴의 번호를 입력해주세요. : ");
 
             int num = 0;
@@ -62,20 +63,24 @@ public class GameService {
                     helpMessage();
                     break;
                 case 3:
+                    System.out.println("\n게임 랭킹을 조회합니다. \n\n\n\n\n");
+                    userService.selectAllRanking();
+                    break;
+                case 4:
                     if (userService.updatePassword(userId)) {
                         System.out.println("비밀번호가 변경되었습니다.");
                     } else {
                         System.err.println("비밀번호 변경 중 오류가 발생하였습니다.");
                     }
                     break;
-                case 4:
+                case 5:
                     if(userService.deleteUser()) {
                         System.out.println("회원 탈퇴가 완료되었습니다.");
                     } else {
                         System.out.println("회원 탈퇴가 취소되었습니다.");
                     }
                     break;
-                case 5:
+                case 6:
                     System.out.println("\n\n");
                     System.out.println("게임을 종료합니다.");
                     running = false;

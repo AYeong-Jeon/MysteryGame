@@ -4,9 +4,7 @@ import com.aggregate.User;
 import com.repository.UserRepository;
 import com.util.ImageUtil;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class UserService {
 
@@ -80,6 +78,29 @@ public class UserService {
         }
     }
 
+    public void selectAllRanking() {
+        Map<String, User> users = userRepository.loadUsers();
+
+        if (users.isEmpty()) {
+            System.out.println(imageUtil.getBossImg());
+            System.out.println("\n\n 문제를 풀어라. \n\n");
+        } else {
+            List<Map.Entry<String, User>> userList = new ArrayList<>(users.entrySet());
+            userList.sort(Comparator.comparing(entry -> entry.getValue().getTotalPlayTime()));
+
+            Map<String, User> sortedUsers = new LinkedHashMap<>();
+            for (Map.Entry<String, User> entry : userList) {
+                sortedUsers.put(entry.getKey(), entry.getValue());
+            }
+
+            for (Map.Entry<String, User> entry : sortedUsers.entrySet()) {
+                System.out.println("ID : " + entry.getKey() + "  |  User : " + entry.getValue().getName() + "  |  TotalPlayTime : " + entry.getValue().getTotalPlayTime() + " | ");
+            }
+            System.out.println("\n\n\n");
+        }
+
+    }
+
     public boolean updatePassword(String userId) {
         boolean result = false;
 
@@ -99,16 +120,19 @@ public class UserService {
 
         Map<String, User> userMap = new HashMap<>();
         Map<String, User> users = userRepository.loadUsers();
-        for(int i = 0 ; i < users.size() ; i++) {
-            if(userId.equals(users.get(userId).getId())) {
-                User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), newPassword, users.get(userId).getScore(), users.get(userId).getTotalPlayTime());
-                userMap.put(users.get(userId).getId(), newUser);
+        if (users.isEmpty()) {
+            System.out.println("사용자 정보가 없습니다.");
+        } else {
+            for (Map.Entry<String, User> entry : users.entrySet()) {
+                if(userId.equals(users.get(userId).getId())) {
+                    User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), newPassword, users.get(userId).getScore(), users.get(userId).getTotalPlayTime());
+                    userMap.put(users.get(userId).getId(), newUser);
+                    result = true;
+                }
+                userMap.put(entry.getKey(), entry.getValue());
             }
-            //바뀐거 말고 일반은 그대로 넣기
-            //userMap.put(users.get(i));
         }
         userRepository.saveUsers(userMap);
-        result = true;
 
         return result;
     }
