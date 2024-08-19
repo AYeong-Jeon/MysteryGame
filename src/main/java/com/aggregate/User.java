@@ -6,14 +6,12 @@ public class User implements Serializable {
     private String name;
     private String id;
     private String pwd;
-    private int score;
     private String totalPlayTime;
 
-    public User(String name, String id, String pwd, int score, String totalPlayTime) {
+    public User(String name, String id, String pwd, String totalPlayTime) {
         this.name = name;
         this.id = id;
         this.pwd = pwd;
-        this.score = score;
         this.totalPlayTime = totalPlayTime;
     }
 
@@ -41,14 +39,6 @@ public class User implements Serializable {
         this.pwd = pwd;
     }
 
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public String getTotalPlayTime() {
         return totalPlayTime;
     }
@@ -63,7 +53,6 @@ public class User implements Serializable {
                 "name='" + name + '\'' +
                 ", id='" + id + '\'' +
                 ", pwd='" + pwd + '\'' +
-                ", score=" + score +
                 ", totalPlayTime='" + totalPlayTime + '\'' +
                 '}';
     }

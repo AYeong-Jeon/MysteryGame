@@ -68,7 +68,7 @@ public class UserService {
             if (users.containsKey(newUserId)) {
                 System.out.println("\n이미 존재하는 아이디입니다. 다른 아이디를 선택하세요.\n");
             } else {
-                User newUser = new User(name, newUserId, newPassword, 0, "00:00:00");
+                User newUser = new User(name, newUserId, newPassword, "00:00:00");
                 users.put(newUserId, newUser);
                 userRepository.saveUsers(users);
                 System.out.println("\n\n회원가입 성공! 아이디: " + newUserId + "\n\n");
@@ -113,7 +113,7 @@ public class UserService {
         } else {
             for (Map.Entry<String, User> entry : users.entrySet()) {
                 if(userId.equals(users.get(userId).getId())) {
-                    User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), users.get(userId).getPwd(), users.get(userId).getScore(), totalTime);
+                    User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), users.get(userId).getPwd(), totalTime);
                     userMap.put(users.get(userId).getId(), newUser);
                 }
                 userMap.put(entry.getKey(), entry.getValue());
@@ -146,7 +146,7 @@ public class UserService {
         } else {
             for (Map.Entry<String, User> entry : users.entrySet()) {
                 if(userId.equals(users.get(userId).getId())) {
-                    User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), newPassword, users.get(userId).getScore(), users.get(userId).getTotalPlayTime());
+                    User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), newPassword, users.get(userId).getTotalPlayTime());
                     userMap.put(users.get(userId).getId(), newUser);
                     result = true;
                 }
