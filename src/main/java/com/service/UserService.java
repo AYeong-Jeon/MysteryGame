@@ -104,23 +104,25 @@ public class UserService {
         }
 
     }
-
     public void updateTotalTime(String userId, String totalTime) {
         Map<String, User> userMap = new HashMap<>();
         Map<String, User> users = userRepository.loadUsers();
+
         if (users.isEmpty()) {
             System.out.println("사용자 정보가 없습니다.");
         } else {
             for (Map.Entry<String, User> entry : users.entrySet()) {
-                if(userId.equals(users.get(userId).getId())) {
-                    User newUser = new User(users.get(userId).getName(), users.get(userId).getId(), users.get(userId).getPwd(), totalTime);
-                    userMap.put(users.get(userId).getId(), newUser);
+                if(userId.equals(entry.getKey())) {
+                    User updatedUser = new User(entry.getValue().getName(), entry.getValue().getId(), entry.getValue().getPwd(), entry.getValue().getScore(), totalTime);
+                    userMap.put(userId, updatedUser);
+                } else {
+                    userMap.put(entry.getKey(), entry.getValue());
                 }
-                userMap.put(entry.getKey(), entry.getValue());
             }
         }
         userRepository.saveUsers(userMap);
     }
+
 
     public boolean updatePassword(String userId) {
         boolean result = false;

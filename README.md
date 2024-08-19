@@ -60,13 +60,13 @@
 ## 💻주요기능
 ![img.jpg](src/main/image/start.jpg)
 ### 로그인 
-- 회원가입
+#### 회원가입
   - ![img.jpg](src/main/image/createUser.jpg)
   - ![img.jpg](src/main/image/saveUser.jpg)
-- 로그인
+#### 로그인
 -   - ![img.jpg](src/main/image/login.jpg)
 -   - ![img.jpg](src/main/image/loadUser.jpg)
-- 회원탈퇴
+#### 회원탈퇴
 - -   - ![img.jpg](src/main/image/deleteUser.jpg)
 
 ### 게임
@@ -81,6 +81,40 @@
   - ![img.jpg](src/main/image/timeUtil.jpg)
 #### 모드에 따른 엔딩 크레딧 변화
 - ![img.jpg](src/main/image/end.jpg)
+
+<br/>
+
+## 📽 구현 영상
+
+<summary>회원가입 - 로그인</summary>
+        <details>
+            <summary>  </summary>
+            <img src="src/main/image/회원가입 - 로그인.gif" alt="회원가입 - 로그인_gif">
+        </details>
+
+<summary>게임모드 - 추리모드</summary>
+        <details>
+            <summary>  </summary>
+            <img src="src/main/image/게임하기 - 추리모드.gif" alt="게임모드 - 추리모드_gif">
+        </details>
+
+<summary>게임모드 - 공포모드</summary>
+        <details>
+            <summary>  </summary>
+            <img src="src/main/image/게임하기 - 공포모드.gif" alt="게임모드 - 공포모드_gif">
+        </details>
+
+<summary>게임 랭킹 조회</summary>
+        <details>
+            <summary>  </summary>
+            <img src="src/main/image/게임 랭킹 조회.gif" alt="게임 랭킹 조회_gif">
+        </details>
+
+<summary>내 정보</summary>
+        <details>
+            <summary>  </summary>
+            <img src="src/main/image/내 정보.gif" alt="내 정보_gif">
+        </details>
 
 <br/>
 
